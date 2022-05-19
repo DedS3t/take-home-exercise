@@ -68,7 +68,7 @@ class App extends React.Component {
         let cop = this.state.team
         for (let i = 0; i < cop.length;i++) 
           if(cop[i].id == this.state.isEdit.id)
-            cop[i] = {...member, id: this.state.isEdit.id}
+            cop[i] = {...member, id: this.state.isEdit.id} 
         this.setState({team: cop}); 
         this.toggleEdit();
         this.toggle();
@@ -77,12 +77,12 @@ class App extends React.Component {
     }
   }
 
-  toggle() {
+  toggle() { // toggle popup
     this.setState({showForm: !this.state.showForm})
     if(this.state.isEdit.status) this.toggleEdit();
   }
   
-  toggleEdit(id) {
+  toggleEdit(id) { // toggle edit mode
     this.setState({isEdit: {...this.state.isEdit, status: !this.state.isEdit.status, id}});
   }
 
@@ -119,7 +119,7 @@ class App extends React.Component {
               onEdit={() => {this.onEdit(member.id)}}
             />
           ))}
-          {/* Make this new team member link to your form! */}
+      
           <TeamMember id="new" name="Join us!" title="New Teammate" onClick={this.toggle} placeHolder={true} />
         </div>
 

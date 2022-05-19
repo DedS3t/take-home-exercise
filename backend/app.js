@@ -5,12 +5,12 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/team', async (req, res, next) => {
+app.get('/team', async (req, res, next) => { // returns all teammembers
   const team = await TeamMember.findAll();
   return res.json(team);
 });
 
-app.post("/team", async (req, res) => {
+app.post("/team", async (req, res) => { // create teammember
   try{
     const { firstName, lastName,title,story,favoriteColor, photoUrl } = req.body;
     let response = await TeamMember.create({firstName, lastName, title, story, favoriteColor, photoUrl});
@@ -20,10 +20,8 @@ app.post("/team", async (req, res) => {
   }
 });
 
-app.post("/team/delete", async (req, res) => {
+app.post("/team/delete", async (req, res) => { // delete member
   try {
-    console.log(req.body);
-    console.log(req.body.id);
     await TeamMember.destroy({
       where: {
         id: req.body.id 
@@ -35,7 +33,7 @@ app.post("/team/delete", async (req, res) => {
   }
 });
 
-app.post("/team/update", async (req, res) => {
+app.post("/team/update", async (req, res) => { // edit member
   try{
     const { firstName, lastName,title,story,favoriteColor, photoUrl } = req.body;
     await TeamMember.update({firstName, lastName, title,story,favoriteColor,photoUrl}, {
@@ -46,7 +44,7 @@ app.post("/team/update", async (req, res) => {
 
     return res.json({"status": true});
   } catch(_) {
-    return res.json({"status": true})
+    return res.json({"status": false});
   }
 });
 

@@ -5,7 +5,7 @@ const PopupForm = ({createMember, close, member, title}) => {
     const [formVals, setFormVals] = useState({favoriteColor: 'red'});
     const [error, setError] = useState("");
 
-    useEffect(() => {
+    useEffect(() => { // sets initial values
         if(member) {
             if(!member.favoriteColor) setFormVals({...member, favoriteColor: 'red'});
             else setFormVals(member)
@@ -17,7 +17,7 @@ const PopupForm = ({createMember, close, member, title}) => {
         e.preventDefault();
         
         
-        if(Object.keys(formVals).length < 6 || !Object.values(formVals).every(v => v)) {
+        if(Object.keys(formVals).length < 6 || !Object.values(formVals).every(v => v)) { // check if incomplete form
             setError("Missing inputs")
             return; 
         }
@@ -27,7 +27,7 @@ const PopupForm = ({createMember, close, member, title}) => {
     }
 
     const updateState = (e, field) => setFormVals({...formVals, [field]: e.target.value});
-    const getState = (field) => formVals[field] || "";
+    const getState = (field) => formVals[field] || ""; // helper state functions
 
 
     return (
