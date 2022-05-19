@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  form{
+    width: 50%;
+    position:fixed;
+    top: 0; left: 0;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    z-index: 1;
+    background-color: #E0E1E4;
+    padding: 1vh 2vw;
+    border-radius: 30px;
+    box-shadow: 5px 5px gray;
+  }
+  
+  input, textarea, select {
+    margin: .5vw 0;
+    line-height: 2vw;
+    width: 100%;
+    font-size: 1.25rem;
+  }
+
+  select {
+      height: 3vh;
+  }
+  
+  .half-input {
+    width: 49%;
+  }
+  
+  .form-title {
+    color: #3B3E9D;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-bottom: 2vh;
+    margin-top: .75vh;
+  }
+
+  input[type='submit']{
+    background-color: #3466F2;
+    color: white;
+    width: 20%;
+    height: 4vh;
+    border-radius: 30px;
+    box-shadow: 3px 3px #2548aa;
+    border: 2px solid #2548aa;
+  }
+  input[type='submit']:hover{
+      cursor: pointer;
+  }
+  
+  .error {
+      font-size: 1rem;
+      color: red;
+  }
+  
+  .w-full {
+    display: flow-root;
+    width: 100%;
+  }
+
+  .fl {
+      float: left;
+  }
+
+  .fr {
+      float: right;
+  }
+
+  .inline {
+      display: inline-block;
+  }
+
+  .close {
+      background-color: #BCBCBF;
+      border: 2px solid gray;
+      box-shadow: none;
+      padding: 3px;
+      color: white;
+      width: 2vmin;
+      height: 2vmin;
+  }
+
+  .close:hover{
+      cursor: pointer;
+  }
+
+  .cancel {
+      padding: .5rem .75rem;
+      background-color: #BCBCBF;
+      border-radius: 30px;
+      margin-left: 1rem;
+      width: 20%;
+      color: white;
+      font-size: 1.25rem;
+      border: 2px solid gray;
+      height: 4vh;
+      box-shadow: 3px 3px gray;
+  }
+
+  .cancel:hover{
+      cursor: pointer;
+  }
+
+  .preview {
+      width: 10vw;
+      height: 10vh;
+  }

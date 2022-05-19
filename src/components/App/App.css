@@ -21,6 +21,33 @@
   text-align: center;
 }
 
+.link {
+  color: lightblue; 
+}
+.link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.blur {
+  filter: blur(8px);
+}
+
+.icon {
+  font-size: 1.25rem;
+  margin-top: .5vw;
+  margin-right: .5vw;
+  margin-left: .5vw;
+}
+
+.icon:hover{
+  cursor: pointer;
+}
+
+.trash {
+  color: red;
+}
+
 @media screen and (min-width: 1080px) {
   .app {
     margin-bottom: 44px;
